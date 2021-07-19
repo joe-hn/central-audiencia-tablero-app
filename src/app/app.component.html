@@ -1,0 +1,16 @@
+<nb-layout>
+  <nb-layout-header fixed class="encabezado">
+    <a class="logo" [routerLink]="['/dashboard']" class="espacioDerecha">
+      <img
+        src="../../../assets/img/logoSEJELetras_Blanco.png"
+        alt=""
+        style="width: 120px"
+      />
+    </a>
+  </nb-layout-header>
+
+  <nb-layout-column class="espacioSuperiorContenido">
+    <router-outlet> </router-outlet>
+  </nb-layout-column>
+  <nb-layout-footer>Poder Judicial de Honduras</nb-layout-footer>
+</nb-layout>

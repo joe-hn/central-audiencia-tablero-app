@@ -1,0 +1,9 @@
+{
+  "env": "development",
+  "urlApis": {
+      "anuncio" : "http://localhost:20607/api/Anuncio",
+      "listaReproduccionAnuncio": "http://localhost:20608/api/ListaReproduccionAviso",
+      "listaReproduccionAudiencia" : "http://localhost:20609/api/ListaReproduccionAudiencias"
+      
+  }
+}
