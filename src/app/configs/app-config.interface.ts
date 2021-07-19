@@ -1,6 +1,7 @@
 export interface IAppConfig {
     env: string;
     urlApis: {        
-        listaReproduccionAudiencia: string
+        listaReproduccionAudiencia: string,
+        listaReproduccionAnuncio: string
     }
 }
