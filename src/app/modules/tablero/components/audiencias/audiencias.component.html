@@ -1,6 +1,120 @@
-<div class="card">    
-    <div class="card-body">
-      <h5 class="card-title">Contador: {{count}}</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>      
+<div
+  class="card"
+  [ngClass]="{
+    'border-danger': alerta === 'danger',
+    'border-primary': alerta === 'primary',
+    'border-success': alerta === 'success',
+    'border-warning': alerta === 'warning',
+    'border-info': alerta === 'info'
+  }"
+>
+  <div
+    class="card-header py-2"
+    [ngClass]="{
+      'border-danger': alerta === 'danger',
+      'border-primary': alerta === 'primary',
+      'border-success': alerta === 'success',
+      'border-warning': alerta === 'warning',
+      'border-info': alerta === 'info',
+      'bg-danger': alerta === 'danger',
+      'bg-primary': alerta === 'primary',
+      'bg-success': alerta === 'success',
+      'bg-warning': alerta === 'warning',
+      'bg-info': alerta === 'info'
+    }"
+  >
+    <div class="pricing-header mx-auto text-center">
+      <h1 class="fw-normal" style="color: white">
+        {{ audiencia.numeroExpediente }}
+      </h1>
+      <h1 class="fw-normal" style="color: white">
+        Audiencia {{ audiencia.tipoAudiencia }}
+      </h1>
     </div>
   </div>
+  <div class="card-body">
+    <ng-container *ngFor="let A of partes">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th style="width: 5%; text-align: left"></th>
+              <th style="width: 60%; text-align: left"></th>
+              <th style="width: 35%; text-align: center"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let B of A.partes">
+              <tr>
+                <td
+                  [ngClass]="{
+                    victima: B.flag === true,
+                    imputado: B.flag === false
+                  }"
+                >
+                  <p class="h3 fw-normal" style="text-align: left">
+                    {{ B.item }}
+                  </p>
+                </td>
+                <td
+                  [ngClass]="{
+                    victima: B.flag === true,
+                    imputado: B.flag === false
+                  }"
+                >
+                  <p class="h3 fw-normal" style="text-align: left">
+                    {{ B.nombre }}
+                  </p>
+                </td>
+                <td
+                  [ngClass]="{
+                    victima: B.flag === true,
+                    imputado: B.flag === false
+                  }"
+                >
+                  <p class="h3 fw-normal" style="text-align: end">
+                    {{ B.tipoParte }}
+                  </p>
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </ng-container>
+  </div>
+
+  <div
+    class="card-footer py-2"
+    [ngClass]="{
+      'border-danger': alerta === 'danger',
+      'border-primary': alerta === 'primary',
+      'border-success': alerta === 'success',
+      'border-warning': alerta === 'warning',
+      'border-info': alerta === 'info',
+      'bg-danger': alerta === 'danger',
+      'bg-primary': alerta === 'primary',
+      'bg-success': alerta === 'success',
+      'bg-warning': alerta === 'warning',
+      'bg-info': alerta === 'info'
+    }"
+  >
+    <div class="row">
+      <div class="col">
+        <h1 class="display-6 fw-normal" style="color: white">
+          {{ audiencia.estadoAudiencia }}
+        </h1>
+      </div>
+      <div class="col-md-auto"></div>
+      <div class="col col-lg-4 text-end">
+        <h1
+          class="display-6 fw-normal"
+          style="color: white"
+          *ngIf="mostrarHora"
+        >
+          {{ audiencia.hora }}
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>

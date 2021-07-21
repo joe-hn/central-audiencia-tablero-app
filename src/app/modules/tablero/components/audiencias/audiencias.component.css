@@ -1,0 +1,18 @@
+.cuerpo {
+    height: 100%;        
+    background-color: white;
+}
+
+card{
+    height: 100%;
+}
+
+.victima {
+    font-style: italic;
+    padding: 20px;
+}
+
+.imputado {
+    font-style: normal;
+    padding: 20px;
+}
